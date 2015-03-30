@@ -6,7 +6,6 @@ Summary:        Client library for OpenStack DNSaaS API
 License:        ASL 2.0
 URL:            http://wiki.openstack.org/designate
 Source0:        https://pypi.python.org/packages/source/p/%{name}/%{name}-%{version}.tar.gz
-Patch0:         0001-Remove-runtime-dependency-on-python-pbr.patch
 BuildArch:      noarch
  
 BuildRequires:  python2-devel
