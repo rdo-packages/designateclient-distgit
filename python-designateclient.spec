@@ -15,6 +15,7 @@ Requires:       python-keystoneclient
 Requires:       python-requests
 Requires:       python-six
 Requires:       python-stevedore
+Requires:       python-pbr
 
 %description
 Client library and command line utility for interacting with OpenStack DNSaaS API.
