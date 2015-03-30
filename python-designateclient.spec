@@ -21,9 +21,7 @@ Client library and command line utility for interacting with OpenStack DNSaaS AP
 
 %prep
 %setup -q
-%patch0 -p1 -b .pbr
-# remove runtime dep on PBR
-sed -i s/REDHATDESIGNATECLIENTVERSION/%{version}/ designateclient/version.py
+# Remove requirements listings
 rm -rf {,test-}requirements.txt
 
 # Remove bundled egg-info
