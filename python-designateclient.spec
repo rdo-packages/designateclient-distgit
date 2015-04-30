@@ -1,5 +1,5 @@
 Name:           python-designateclient
-Version:        1.1.1
+Version:        1.2.0
 Release:        1%{?dist}
 Summary:        Client library for OpenStack DNSaaS API
 
@@ -42,6 +42,8 @@ rm -rf %{pypi_name}.egg-info
 %{_bindir}/designate
 
 %changelog
+* Wed Apr 29 2015 Victoria Martinez de la Cruz <vkmc@fedoraproject.com> - 1.2.0-1
+- Update to 1.2.0.
 * Mon Mar 30 2015 Victoria Martinez de la Cruz <vimartin@redhat.com> - 1.1.1-2
 - Removes pbr patch.
 * Wed Feb 25 2015 Victoria Martinez de la Cruz <vimartin@redhat.com> - 1.1.1-1
