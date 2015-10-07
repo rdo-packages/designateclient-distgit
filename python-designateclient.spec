@@ -10,6 +10,7 @@ BuildArch:      noarch
 
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
+BuildRequires:  python-setuptools
 Requires:       python-jsonschema
 Requires:       python-keystoneclient
 Requires:       python-requests
