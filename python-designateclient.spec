@@ -1,6 +1,6 @@
 Name:           python-designateclient
-Version:        1.2.0
-Release:        2%{?dist}
+Version:        1.5.0
+Release:        1%{?dist}
 Summary:        Client library for OpenStack DNSaaS API
 
 License:        ASL 2.0
@@ -16,6 +16,10 @@ Requires:       python-requests
 Requires:       python-six
 Requires:       python-stevedore
 Requires:       python-pbr
+Requires:       python-cliff
+Requires:       python-debtcollector
+Requires:       python-oslo-utils
+
 
 %description
 Client library and command line utility for interacting with OpenStack DNSaaS API.
@@ -42,6 +46,9 @@ rm -rf %{pypi_name}.egg-info
 %{_bindir}/designate
 
 %changelog
+* Wed Oct 07 2015 Alan Pevec <alan.pevec@redhat.com> 1.5.0-1
+- Update to upstream 1.5.0
+
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.2.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
