@@ -7,7 +7,7 @@ License:        ASL 2.0
 URL:            http://wiki.openstack.org/designate
 Source0:        https://pypi.python.org/packages/source/p/%{name}/%{name}-%{version}.tar.gz
 BuildArch:      noarch
- 
+
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
 Requires:       python-jsonschema
@@ -38,7 +38,7 @@ rm -rf %{pypi_name}.egg-info
 %install
 %{__python2} setup.py install --skip-build --root %{buildroot}
 
-%files 
+%files
 %{!?_licensedir:%global license %%doc}
 %license LICENSE
 %{python2_sitelib}/designateclient
