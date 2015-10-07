@@ -29,9 +29,6 @@ Client library and command line utility for interacting with OpenStack DNSaaS AP
 # Remove requirements listings
 rm -rf {,test-}requirements.txt
 
-# Remove bundled egg-info
-rm -rf %{pypi_name}.egg-info
-
 %build
 %{__python2} setup.py build
 
