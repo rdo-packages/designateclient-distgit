@@ -3,7 +3,7 @@
 
 Name:       python-%{service}client
 Version:    XXX
-Release:    XXX{?dist}
+Release:    XXX
 Summary:    Python API and CLI for OpenStack Designate
 
 License:    ASL 2.0
