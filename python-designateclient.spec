@@ -1,14 +1,15 @@
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global service designate
 %global common_desc Client library and command line utility for interacting with Openstack Designate API
 
 Name:       python-%{service}client
-Version:    XXX
-Release:    XXX
+Version:    2.0.0
+Release:    1%{?dist}
 Summary:    Python API and CLI for OpenStack Designate
 
 License:    ASL 2.0
 URL:        http://launchpad.net/python-%{service}client/
-Source0:    https://pypi.python.org/packages/source/p/%{name}/%{name}-%{version}.tar.gz
+Source0:    https://pypi.python.org/packages/source/p/%{name}/%{name}-%{version}%{?milestone}.tar.gz
 
 BuildArch:  noarch
 
@@ -78,3 +79,5 @@ export SKIP_PIP_INSTALL=1
 
 
 %changelog
+* Wed Mar 23 2016 RDO <rdo-list@redhat.com> 2.0.0-0.1
+-  Rebuild for Mitaka 
