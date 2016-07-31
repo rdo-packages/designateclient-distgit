@@ -9,7 +9,7 @@
 
 Name:       python-%{sname}
 Version:    2.0.0
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Python API and CLI for OpenStack Designate
 
 License:    ASL 2.0
@@ -160,5 +160,8 @@ sphinx-build -b html doc/source html
 %license LICENSE
 
 %changelog
+* Sun Jul 31 2016 Haïkel Guémar <hguemar@fedoraproject.org> - 2.0.0-2
+- Add python3 subpackage
+
 * Wed Mar 23 2016 RDO <rdo-list@redhat.com> 2.0.0-0.1
 -  Rebuild for Mitaka 
