@@ -8,8 +8,8 @@
 %endif
 
 Name:       python-%{sname}
-Version:    XXX
-Release:    XXX
+Version:    2.3.0
+Release:    1%{?dist}
 Summary:    Python API and CLI for OpenStack Designate
 
 License:    ASL 2.0
@@ -162,3 +162,6 @@ sphinx-build -b html doc/source html
 %license LICENSE
 
 %changelog
+* Mon Sep 12 2016 Haikel Guemar <hguemar@fedoraproject.org> 2.3.0-1
+- Update to 2.3.0
+
