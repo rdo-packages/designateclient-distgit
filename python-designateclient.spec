@@ -14,7 +14,7 @@ Summary:    Python API and CLI for OpenStack Designate
 
 License:    ASL 2.0
 URL:        https://launchpad.net/python-%{sname}/
-Source0:    https://pypi.io/packages/source/p/%{name}/%{name}-%{version}.tar.gz
+Source0:    https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz
 
 BuildArch:  noarch
 
