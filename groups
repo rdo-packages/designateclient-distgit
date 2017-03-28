@@ -1,6 +1,9 @@
-# UUID                                  	Group Name
-#
-63673ea7f2ae6a5666566b1ea9f14e473d00f5a9	rdo-core
-7d53154a1522ea28d9d15781a3c45efb2a1f8c68	openstack/designateclient-distgit-ptl
-97453ac56749d80ffea3428369c0c03a7a9afcf3	openstack/designateclient-distgit-core
-global:Registered-Users                 	Registered Users
+# UUID Group Name
+global:Registered-Users	Registered Users
+4572c517702492251ad622a289176552a8acbbb2	rdo-superusers
+global:Anonymous-Users	Anonymous Users
+8e0f06a9c1239fdd6477b85771a135d4523f0bf6	openstack/designateclient-ptl
+05a678d3d4a168e149d5e8a0063bbd1b1c5526da	Administrators
+401cf37bee35d1c809d4d957e55f2a304f8eed69	rdo-provenpackagers
+6ddfecad023c6f4fa3ac8c4d2583c502ea675a73	Non-Interactive Users
+bce48dd0a2246ee60f9f34c2ccfd844cdb8c62e3	openstack/designateclient-core
