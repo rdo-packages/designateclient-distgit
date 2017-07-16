@@ -28,6 +28,7 @@ Summary:    Python API and CLI for OpenStack Designate
 BuildRequires: python2-devel
 BuildRequires: python-setuptools
 BuildRequires: python-pbr
+BuildRequires: git
 
 Requires: python-cliff
 Requires: python-jsonschema >= 2.0.0
@@ -95,7 +96,10 @@ This package contains Designate client tests files.
 Summary:          Documentation for OpenStack Designate API Client
 
 BuildRequires:    python-sphinx
-BuildRequires:    python-oslo-sphinx
+BuildRequires:    python-openstackdocstheme
+BuildRequires:    python-keystoneauth1
+BuildRequires:    python-osc-lib
+BuildRequires:    python-jsonschema
 
 %description      doc
 %{common_desc}
@@ -103,7 +107,7 @@ BuildRequires:    python-oslo-sphinx
 This package contains auto-generated documentation.
 
 %prep
-%setup -q -n %{name}-%{upstream_version}
+%autosetup -n %{name}-%{upstream_version} -S git
 
 rm -rf {,test-}requirements.txt
 
@@ -127,8 +131,7 @@ ln -s ./designate-%{python2_version} %{buildroot}%{_bindir}/designate-2
 ln -s ./designate-2 %{buildroot}%{_bindir}/designate
 
 
-export PYTHONPATH="$( pwd ):$PYTHONPATH"
-sphinx-build -b html doc/source html
+%{__python2} setup.py build_sphinx -b html
 
 %files -n python2-%{sname}
 %doc README.rst
@@ -158,7 +161,7 @@ sphinx-build -b html doc/source html
 %endif
 
 %files doc
-%doc html
+%doc doc/build/html
 %license LICENSE
 
 %changelog
