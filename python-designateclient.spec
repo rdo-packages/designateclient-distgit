@@ -33,13 +33,13 @@ BuildRequires: git
 Requires: python-cliff
 Requires: python-jsonschema >= 2.0.0
 Requires: python-pbr
-Requires: python-keystoneauth1 >= 2.18.0
-Requires: python-requests >= 2.10.0
+Requires: python-keystoneauth1 >= 3.1.0
+Requires: python-requests >= 2.14.2
 Requires: python-six >= 1.9.0
 Requires: python-stevedore
-Requires: python-osc-lib >= 1.2.0
+Requires: python-osc-lib >= 1.7.0
 Requires: python-debtcollector
-Requires: python-oslo-utils >= 3.18.0
+Requires: python-oslo-utils >= 3.20.0
 
 %description -n python2-%{sname}
 %{common_desc}
@@ -68,13 +68,13 @@ BuildRequires: python3-pbr
 Requires: python3-cliff
 Requires: python3-jsonschema >= 2.0.0
 Requires: python3-pbr
-Requires: python3-keystoneauth1 >= 2.18.0
-Requires: python3-requests >= 2.10.0
+Requires: python3-keystoneauth1 >= 3.1.0
+Requires: python3-requests >= 2.14.2
 Requires: python3-six >= 1.9.0
 Requires: python3-stevedore
-Requires: python3-osc-lib >= 1.2.0
+Requires: python3-osc-lib >= 1.7.0
 Requires: python3-debtcollector
-Requires: python3-oslo-utils >= 3.18.0
+Requires: python3-oslo-utils >= 3.20.0
 
 %description -n python3-%{sname}
 %{common_desc}
