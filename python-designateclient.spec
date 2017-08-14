@@ -8,8 +8,8 @@
 %endif
 
 Name:       python-%{sname}
-Version:    XXX
-Release:    XXX
+Version:    2.7.0
+Release:    1%{?dist}
 Summary:    Python API and CLI for OpenStack Designate
 
 License:    ASL 2.0
@@ -165,3 +165,6 @@ ln -s ./designate-2 %{buildroot}%{_bindir}/designate
 %license LICENSE
 
 %changelog
+* Mon Aug 14 2017 Alfredo Moralejo <amoralej@redhat.com> 2.7.0-1
+- Update to 2.7.0
+
