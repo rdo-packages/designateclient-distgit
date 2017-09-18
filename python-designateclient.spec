@@ -102,6 +102,7 @@ BuildRequires:    python-openstackdocstheme
 BuildRequires:    python-keystoneauth1
 BuildRequires:    python-osc-lib
 BuildRequires:    python-jsonschema
+BuildRequires:    openstack-macros
 
 %description      doc
 %{common_desc}
@@ -111,7 +112,7 @@ This package contains auto-generated documentation.
 %prep
 %autosetup -n %{name}-%{upstream_version} -S git
 
-rm -rf {,test-}requirements.txt
+%py_req_cleanup
 
 %build
 %py2_build
