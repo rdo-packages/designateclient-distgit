@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_1fd37739",
+        "filename": "python-designateclient.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 454
+      },
+      "writtenOn": "2017-10-03T13:52:21Z",
+      "side": 1,
+      "message": "The description could start from the next line.",
+      "revId": "b5134880d6449022e1b40aa595b23063f09a2b21",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
