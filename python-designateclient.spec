@@ -1,5 +1,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
-%global common_desc Client library and command line utility for interacting with Openstack Designate API
+
+%global common_desc \
+Client library and command line utility for interacting with Openstack Designate API
 
 %global sname designateclient
 
@@ -19,7 +21,7 @@ Source0:    https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.t
 BuildArch:  noarch
 
 %description
-Client library and command line utility for interacting with Openstack Designate API
+%{common_desc}
 
 %package -n python2-%{sname}
 Summary:    Python API and CLI for OpenStack Designate
