@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_11c1ab2e",
+        "filename": "python-designateclient.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 424
+      },
+      "writtenOn": "2017-10-04T10:39:40Z",
+      "side": 1,
+      "message": "This could do with breaking across two lines.",
+      "revId": "33d68367304e3012f8991c51a6fbd21bfa1f9771",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
