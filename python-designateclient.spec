@@ -20,6 +20,9 @@ Source0:    https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.t
 
 BuildArch:  noarch
 
+BuildRequires: git
+BuildRequires: openstack-macros
+
 %description
 %{common_desc}
 
@@ -30,7 +33,6 @@ Summary:    Python API and CLI for OpenStack Designate
 BuildRequires: python2-devel
 BuildRequires: python-setuptools
 BuildRequires: python-pbr
-BuildRequires: git
 
 Requires: python-cliff
 Requires: python-jsonschema >= 2.0.0
@@ -102,7 +104,6 @@ BuildRequires:    python-openstackdocstheme
 BuildRequires:    python-keystoneauth1
 BuildRequires:    python-osc-lib
 BuildRequires:    python-jsonschema
-BuildRequires:    openstack-macros
 
 %description      doc
 %{common_desc}
