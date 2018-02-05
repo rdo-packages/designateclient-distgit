@@ -31,19 +31,24 @@ Summary:    Python API and CLI for OpenStack Designate
 %{?python_provide:%python_provide python2-%{sname}}
 
 BuildRequires: python2-devel
-BuildRequires: python-setuptools
-BuildRequires: python-pbr
+BuildRequires: python2-setuptools
+BuildRequires: python2-pbr
 
+Requires: python2-pbr
+Requires: python2-keystoneauth1 >= 3.3.0
+Requires: python2-requests >= 2.14.2
+Requires: python2-six >= 1.10.0
+Requires: python2-stevedore
+Requires: python2-osc-lib >= 1.8.0
+Requires: python2-debtcollector
+Requires: python2-oslo-utils >= 3.33.0
+%if 0%{?fedora} > 0
+Requires: python2-cliff
+Requires: python2-jsonschema >= 2.6.0
+%else
 Requires: python-cliff
-Requires: python-jsonschema >= 2.0.0
-Requires: python-pbr
-Requires: python-keystoneauth1 >= 3.1.0
-Requires: python-requests >= 2.10.0
-Requires: python-six >= 1.9.0
-Requires: python-stevedore
-Requires: python-osc-lib >= 1.7.0
-Requires: python-debtcollector
-Requires: python-oslo-utils >= 3.20.0
+Requires: python-jsonschema >= 2.6.0
+%endif
 
 %description -n python2-%{sname}
 %{common_desc}
@@ -52,7 +57,7 @@ Requires: python-oslo-utils >= 3.20.0
 %package -n python2-%{sname}-tests
 Summary:    Python API and CLI for OpenStack Designate (tests)
 %{?python_provide:%python_provide python2-%{sname}-tests}
-Requires:	%{name} = %{version}-%{release}
+Requires:	python2-%{sname} = %{version}-%{release}
 
 %description -n python2-%{sname}-tests
 %{common_desc}
@@ -70,15 +75,15 @@ BuildRequires: python3-setuptools
 BuildRequires: python3-pbr
 
 Requires: python3-cliff
-Requires: python3-jsonschema >= 2.0.0
+Requires: python3-jsonschema >= 2.6.0
 Requires: python3-pbr
-Requires: python3-keystoneauth1 >= 3.1.0
-Requires: python3-requests >= 2.10.0
-Requires: python3-six >= 1.9.0
+Requires: python3-keystoneauth1 >= 3.3.0
+Requires: python3-requests >= 2.14.2
+Requires: python3-six >= 1.10.0
 Requires: python3-stevedore
-Requires: python3-osc-lib >= 1.7.0
+Requires: python3-osc-lib >= 1.8.0
 Requires: python3-debtcollector
-Requires: python3-oslo-utils >= 3.20.0
+Requires: python3-oslo-utils >= 3.33.0
 
 %description -n python3-%{sname}
 %{common_desc}
@@ -87,7 +92,7 @@ Requires: python3-oslo-utils >= 3.20.0
 %package -n python3-%{sname}-tests
 Summary:    Python API and CLI for OpenStack Designate (tests)
 %{?python_provide:%python_provide python3-%{sname}-tests}
-Requires:	%{name} = %{version}-%{release}
+Requires:	python3-%{sname} = %{version}-%{release}
 
 %description -n python3-%{sname}-tests
 %{common_desc}
@@ -99,11 +104,15 @@ This package contains Designate client tests files.
 %package doc
 Summary:          Documentation for OpenStack Designate API Client
 
-BuildRequires:    python-sphinx
-BuildRequires:    python-openstackdocstheme
-BuildRequires:    python-keystoneauth1
-BuildRequires:    python-osc-lib
+BuildRequires:    python2-sphinx
+BuildRequires:    python2-openstackdocstheme
+BuildRequires:    python2-keystoneauth1
+BuildRequires:    python2-osc-lib
+%if 0%{?fedora} > 0
+BuildRequires:    python2-jsonschema
+%else
 BuildRequires:    python-jsonschema
+%endif
 
 %description      doc
 %{common_desc}
