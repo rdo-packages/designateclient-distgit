@@ -35,7 +35,7 @@ BuildRequires: python2-setuptools
 BuildRequires: python2-pbr
 
 Requires: python2-pbr
-Requires: python2-keystoneauth1 >= 3.3.0
+Requires: python2-keystoneauth1 >= 3.4.0
 Requires: python2-requests >= 2.14.2
 Requires: python2-six >= 1.10.0
 Requires: python2-stevedore
@@ -77,7 +77,7 @@ BuildRequires: python3-pbr
 Requires: python3-cliff
 Requires: python3-jsonschema >= 2.6.0
 Requires: python3-pbr
-Requires: python3-keystoneauth1 >= 3.3.0
+Requires: python3-keystoneauth1 >= 3.4.0
 Requires: python3-requests >= 2.14.2
 Requires: python3-six >= 1.10.0
 Requires: python3-stevedore
