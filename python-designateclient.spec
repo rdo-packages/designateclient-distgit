@@ -10,8 +10,8 @@ Client library and command line utility for interacting with Openstack Designate
 %endif
 
 Name:       python-%{sname}
-Version:    XXX
-Release:    XXX
+Version:    2.9.0
+Release:    1%{?dist}
 Summary:    Python API and CLI for OpenStack Designate
 
 License:    ASL 2.0
@@ -178,3 +178,6 @@ ln -s ./designate-2 %{buildroot}%{_bindir}/designate
 %license LICENSE
 
 %changelog
+* Thu Aug 09 2018 RDO <dev@lists.rdoproject.org> 2.9.0-1
+- Update to 2.9.0
+
