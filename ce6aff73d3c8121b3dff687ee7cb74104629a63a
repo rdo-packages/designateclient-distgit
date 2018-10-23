@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_1aeae70f",
+        "filename": "python-designateclient.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2018-10-23T16:03:34Z",
+      "side": 1,
+      "message": "Requires: python%{pyver}-cliff\nRequires: python%{pyver}-jsonschema \u003e\u003d 2.6.0",
+      "range": {
+        "startLine": 62,
+        "startChar": 1,
+        "endLine": 63,
+        "endChar": 36
+      },
+      "revId": "ce6aff73d3c8121b3dff687ee7cb74104629a63a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_faecd32a",
+        "filename": "python-designateclient.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2018-10-23T16:03:34Z",
+      "side": 1,
+      "message": "It should be \nBuildRequires:    python%{pyver}-jsonschema",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 92,
+        "endChar": 35
+      },
+      "revId": "ce6aff73d3c8121b3dff687ee7cb74104629a63a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_9adef76b",
+        "filename": "python-designateclient.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2018-10-23T16:03:34Z",
+      "side": 1,
+      "message": "I think this part is not needed",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 112,
+        "endChar": 59
+      },
+      "revId": "ce6aff73d3c8121b3dff687ee7cb74104629a63a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_3ae36b35",
+        "filename": "python-designateclient.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2018-10-23T16:03:34Z",
+      "side": 1,
+      "message": "not needed",
+      "range": {
+        "startLine": 122,
+        "startChar": 0,
+        "endLine": 123,
+        "endChar": 34
+      },
+      "revId": "ce6aff73d3c8121b3dff687ee7cb74104629a63a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
