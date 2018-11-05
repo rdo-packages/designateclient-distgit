@@ -1,10 +1,8 @@
 # Macros for py2/py3 compatibility
 %if 0%{?fedora} || 0%{?rhel} > 7
 %global pyver %{python3_pkgversion}
-%global pymicrover %{python3_version}
 %else
 %global pyver 2
-%global pymicrover %{python2_version}
 %endif
 
 %global pyver_bin python%{pyver}
