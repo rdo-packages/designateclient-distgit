@@ -12,6 +12,7 @@
 # End of macros for py2/py3 compatibility
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+%global with_doc 1
 
 %global common_desc \
 Client library and command line utility for interacting with Openstack Designate API
@@ -68,6 +69,7 @@ Requires:	python%{pyver}-%{sname} = %{version}-%{release}
 
 This package contains Designate client tests files.
 
+%if 0%{?with_doc}
 %package doc
 Summary:          Documentation for OpenStack Designate API Client
 
@@ -81,6 +83,7 @@ BuildRequires:    python%{pyver}-jsonschema
 %{common_desc}
 
 This package contains auto-generated documentation.
+%endif
 
 %prep
 %autosetup -n %{name}-%{upstream_version} -S git
@@ -89,7 +92,10 @@ This package contains auto-generated documentation.
 
 %build
 %{pyver_build}
+
+%if 0%{?with_doc}
 %{pyver_bin} setup.py build_sphinx -b html
+%endif
 
 %install
 %{pyver_install}
@@ -107,8 +113,10 @@ This package contains auto-generated documentation.
 %files -n python%{pyver}-%{sname}-tests
 %{pyver_sitelib}/%{sname}/tests
 
+%if 0%{?with_doc}
 %files doc
 %doc doc/build/html
 %license LICENSE
+%endif
 
 %changelog
