@@ -8,7 +8,7 @@
 %endif
 
 Name:       python-%{sname}
-Version:    2.7.0
+Version:    2.7.1
 Release:    1%{?dist}
 Summary:    Python API and CLI for OpenStack Designate
 
@@ -165,6 +165,9 @@ ln -s ./designate-2 %{buildroot}%{_bindir}/designate
 %license LICENSE
 
 %changelog
+* Mon Apr 29 2019 RDO <dev@lists.rdoproject.org> 2.7.1-1
+- Update to 2.7.1
+
 * Mon Aug 14 2017 Alfredo Moralejo <amoralej@redhat.com> 2.7.0-1
 - Update to 2.7.0
 
