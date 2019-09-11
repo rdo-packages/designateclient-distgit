@@ -121,3 +121,4 @@ This package contains auto-generated documentation.
 %endif
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-designateclient/commit/?id=093d8d7170cbf6ef8c7a7c0ff2a4dcd7ecd6361b
