@@ -109,7 +109,6 @@ This package contains auto-generated documentation.
 %{pyver_sitelib}/designateclient
 %exclude %{pyver_sitelib}/%{sname}/tests
 %{pyver_sitelib}/*.egg-info
-%{_bindir}/designate
 
 %files -n python%{pyver}-%{sname}-tests
 %{pyver_sitelib}/%{sname}/tests
