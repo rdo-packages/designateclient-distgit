@@ -79,6 +79,7 @@ BuildRequires:    python%{pyver}-openstackdocstheme
 BuildRequires:    python%{pyver}-keystoneauth1
 BuildRequires:    python%{pyver}-osc-lib
 BuildRequires:    python%{pyver}-jsonschema
+BuildRequires:    python%{pyver}-oslo-serialization
 
 %description      doc
 %{common_desc}
