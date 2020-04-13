@@ -96,7 +96,9 @@ This package contains auto-generated documentation.
 %{pyver_build}
 
 %if 0%{?with_doc}
-%{pyver_bin} setup.py build_sphinx -b html
+PYTHONPATH=. sphinx-build-%{pyver} -b html doc/source doc/build/html
+# Fix hidden-file-or-dir warnings
+rm -fr doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %install
