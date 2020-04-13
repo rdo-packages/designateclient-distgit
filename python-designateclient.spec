@@ -96,7 +96,7 @@ This package contains auto-generated documentation.
 %{pyver_build}
 
 %if 0%{?with_doc}
-%{pyver_bin} setup.py build_sphinx -b html
+sphinx-build-%{pyver} -W -b html doc/source doc/build/html
 %endif
 
 %install
