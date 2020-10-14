@@ -1,3 +1,5 @@
+%{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
+%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global with_doc 1
@@ -9,14 +11,24 @@ Client library and command line utility for interacting with Openstack Designate
 
 Name:       python-%{sname}
 Version:    4.1.0
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Python API and CLI for OpenStack Designate
 
 License:    ASL 2.0
 URL:        https://launchpad.net/python-%{sname}/
 Source0:    https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+Source101:        https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz.asc
+Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
+%endif
 
 BuildArch:  noarch
+
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+BuildRequires:  /usr/bin/gpgv2
+%endif
 
 BuildRequires: git
 BuildRequires: openstack-macros
@@ -76,6 +88,10 @@ This package contains auto-generated documentation.
 %endif
 
 %prep
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+%{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
+%endif
 %autosetup -n %{name}-%{upstream_version} -S git
 
 %py_req_cleanup
@@ -111,6 +127,9 @@ rm -fr doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+* Wed Oct 21 2020 Joel Capitao <jcapitao@redhat.com> 4.1.0-2
+- Enable sources tarball validation using GPG signature.
+
 * Mon Sep 21 2020 RDO <dev@lists.rdoproject.org> 4.1.0-1
 - Update to 4.1.0
 
