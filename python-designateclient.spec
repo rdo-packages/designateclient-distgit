@@ -128,3 +128,4 @@ rm -fr doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-designateclient/commit/?id=055d1601beb95644e37976d9f4aa3601d5084bc1
