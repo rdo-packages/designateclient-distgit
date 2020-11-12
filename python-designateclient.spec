@@ -101,7 +101,7 @@ This package contains auto-generated documentation.
 %{py3_build}
 
 %if 0%{?with_doc}
-PYTHONPATH=. sphinx-build-3 -W -b html doc/source doc/build/html
+PYTHONPATH=. sphinx-build-3 -b html doc/source doc/build/html
 # Fix hidden-file-or-dir warnings
 rm -fr doc/build/html/.{doctrees,buildinfo}
 %endif
