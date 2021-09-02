@@ -47,7 +47,6 @@ BuildRequires: python3-pbr
 Requires: python3-pbr >= 2.0.0
 Requires: python3-keystoneauth1 >= 3.4.0
 Requires: python3-requests >= 2.14.2
-Requires: python3-six >= 1.10.0
 Requires: python3-stevedore >= 1.20.0
 Requires: python3-osc-lib >= 1.8.0
 Requires: python3-debtcollector >= 1.2.0
