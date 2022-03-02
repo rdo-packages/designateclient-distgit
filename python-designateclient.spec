@@ -53,7 +53,7 @@ Requires: python3-debtcollector >= 1.2.0
 Requires: python3-oslo-utils >= 3.33.0
 Requires: python3-oslo-serialization >= 2.18.0
 Requires: python3-cliff >= 2.8.0
-Requires: python3-jsonschema >= 2.6.0
+Requires: python3-jsonschema >= 3.2.0
 
 %description -n python3-%{sname}
 %{common_desc}
