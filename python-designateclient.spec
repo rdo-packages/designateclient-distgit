@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x01527a34f0d0080f8a5db8d6eb6c5df21b4b6363
+%global sources_gpg_sign 0xa63ea142678138d1bb15f2e303bdfd64dd164087
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global with_doc 1
@@ -10,7 +10,7 @@ Client library and command line utility for interacting with Openstack Designate
 %global sname designateclient
 
 Name:       python-%{sname}
-Version:    4.5.0
+Version:    4.5.1
 Release:    1%{?dist}
 Summary:    Python API and CLI for OpenStack Designate
 
@@ -127,6 +127,9 @@ rm -fr doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+* Mon Jun 20 2022 RDO <dev@lists.rdoproject.org> 4.5.1-1
+- Update to 4.5.1
+
 * Tue Mar 15 2022 RDO <dev@lists.rdoproject.org> 4.5.0-1
 - Update to 4.5.0
 
