@@ -2,6 +2,12 @@
 %global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+# we are excluding some BRs from automatic generator
+%global excluded_brs doc8 bandit pre-commit hacking flake8-import-order
+# Exclude sphinx from BRs if docs are disabled
+%if ! 0%{?with_doc}
+%global excluded_brs %{excluded_brs} sphinx openstackdocstheme
+%endif
 %global with_doc 1
 
 %global common_desc \
@@ -14,7 +20,7 @@ Version:    XXX
 Release:    XXX
 Summary:    Python API and CLI for OpenStack Designate
 
-License:    ASL 2.0
+License:    Apache-2.0
 URL:        https://launchpad.net/python-%{sname}/
 Source0:    https://tarballs.openstack.org/%{name}/%{name}-%{upstream_version}.tar.gz
 # Required for tarball sources verification
@@ -38,30 +44,15 @@ BuildRequires: openstack-macros
 
 %package -n python3-%{sname}
 Summary:    Python API and CLI for OpenStack Designate
-%{?python_provide:%python_provide python3-%{sname}}
 
 BuildRequires: python3-devel
-BuildRequires: python3-setuptools
-BuildRequires: python3-pbr
-
-Requires: python3-pbr >= 2.0.0
-Requires: python3-keystoneauth1 >= 3.4.0
-Requires: python3-requests >= 2.14.2
-Requires: python3-stevedore >= 1.20.0
-Requires: python3-osc-lib >= 1.8.0
-Requires: python3-debtcollector >= 1.2.0
-Requires: python3-oslo-utils >= 3.33.0
-Requires: python3-oslo-serialization >= 2.18.0
-Requires: python3-cliff >= 2.8.0
-Requires: python3-jsonschema >= 3.2.0
-
+BuildRequires: pyproject-rpm-macros
 %description -n python3-%{sname}
 %{common_desc}
 
 
 %package -n python3-%{sname}-tests
 Summary:    Python API and CLI for OpenStack Designate (tests)
-%{?python_provide:%python_provide python3-%{sname}-tests}
 Requires:	python3-%{sname} = %{version}-%{release}
 
 %description -n python3-%{sname}-tests
@@ -72,14 +63,6 @@ This package contains Designate client tests files.
 %if 0%{?with_doc}
 %package doc
 Summary:          Documentation for OpenStack Designate API Client
-
-BuildRequires:    python3-sphinx
-BuildRequires:    python3-sphinxcontrib-apidoc
-BuildRequires:    python3-openstackdocstheme
-BuildRequires:    python3-keystoneauth1
-BuildRequires:    python3-osc-lib
-BuildRequires:    python3-jsonschema
-BuildRequires:    python3-oslo-serialization
 
 %description      doc
 %{common_desc}
@@ -94,19 +77,41 @@ This package contains auto-generated documentation.
 %endif
 %autosetup -n %{name}-%{upstream_version} -S git
 
-%py_req_cleanup
+
+sed -i /^[[:space:]]*-c{env:.*_CONSTRAINTS_FILE.*/d tox.ini
+sed -i "s/^deps = -c{env:.*_CONSTRAINTS_FILE.*/deps =/" tox.ini
+sed -i /^minversion.*/d tox.ini
+sed -i /^requires.*virtualenv.*/d tox.ini
+sed -i '/sphinx-build/ s/-W//' tox.ini
+
+# Exclude some bad-known BRs
+for pkg in %{excluded_brs}; do
+  for reqfile in doc/requirements.txt test-requirements.txt; do
+    if [ -f $reqfile ]; then
+      sed -i /^${pkg}.*/d $reqfile
+    fi
+  done
+done
+
+# Automatic BR generation
+%generate_buildrequires
+%if 0%{?with_doc}
+  %pyproject_buildrequires -t -e %{default_toxenv},docs
+%else
+  %pyproject_buildrequires -t -e %{default_toxenv}
+%endif
 
 %build
-%{py3_build}
+%pyproject_wheel
 
 %if 0%{?with_doc}
-PYTHONPATH=. sphinx-build-3 -b html doc/source doc/build/html
+%tox -e docs
 # Fix hidden-file-or-dir warnings
 rm -fr doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %install
-%{py3_install}
+%pyproject_install
 
 %files -n python3-%{sname}
 
@@ -115,7 +120,7 @@ rm -fr doc/build/html/.{doctrees,buildinfo}
 
 %{python3_sitelib}/designateclient
 %exclude %{python3_sitelib}/%{sname}/tests
-%{python3_sitelib}/*.egg-info
+%{python3_sitelib}/*.dist-info
 
 %files -n python3-%{sname}-tests
 %{python3_sitelib}/%{sname}/tests
