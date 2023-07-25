@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc0daa3d_0947fabd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-07-25T14:15:32Z",
+      "side": 1,
+      "message": "It\u0027s failing to build the html docs properly:\n\nhttps://logserver.rdoproject.org/97/49397/2/check/DLRN-rpmbuild-centos9/9e36d75/buildset/centos9/current/rpmbuild.log.gz\n\nIt fails to load itself, we probably need to move doc building to %install.\n\n",
+      "revId": "10922d13e54dc37be6c8d6c89801c50e5001571d",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
