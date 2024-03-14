@@ -1,0 +1,8 @@
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Code-Review+2: Joel Capitao <jcapitao@redhat.com>
+Workflow+1: Joel Capitao <jcapitao@redhat.com>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Thu, 14 Mar 2024 09:18:02 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/designateclient-distgit/+/52145
+Project: openstack/designateclient-distgit
+Branch: refs/heads/caracal-rdo
