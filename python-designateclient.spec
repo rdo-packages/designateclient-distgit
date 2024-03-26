@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x815AFEC729392386480E076DCC0DFE2D21C023C9
+%global sources_gpg_sign 0x815afec729392386480e076dcc0dfe2d21c023c9
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 # we are excluding some BRs from automatic generator
@@ -133,4 +133,5 @@ rm -fr doc/build/html/.{doctrees,buildinfo}
 %changelog
 * Mon Sep 04 2023 RDO <dev@lists.rdoproject.org> 5.3.0-1
 - Update to 5.3.0
+
 
