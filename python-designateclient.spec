@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0x22284f69d9eccdf3df7819791c711af193ff8e54
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 # we are excluding some BRs from automatic generator
@@ -16,8 +16,8 @@ Client library and command line utility for interacting with Openstack Designate
 %global sname designateclient
 
 Name:       python-%{sname}
-Version:    XXX
-Release:    XXX
+Version:    6.2.0
+Release:    1%{?dist}
 Summary:    Python API and CLI for OpenStack Designate
 
 License:    Apache-2.0
@@ -131,4 +131,7 @@ rm -fr doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+* Fri Mar 14 2025 RDO <dev@lists.rdoproject.org> 6.2.0-1
+- Update to 6.2.0
+
 
